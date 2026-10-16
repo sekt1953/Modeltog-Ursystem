@@ -11,8 +11,9 @@ Da systemet ved hvor mange minuter der er til næste dag Kl: 03:55, sender den s
 * jeg vil anbringe små ur kontroller ved hver station med et lille elektronisk ur som viser tiden analog, og denne til skalvære den samme som på de gamle urer, der skal også være en pause kanp på uret, trykker man på pause knappen skal alle display vise hvem der stoppede tiden, og vedkommende er også den som kan starte tiden igen.
 * Jeg bad AI om hjælp til denne opgave og herunder kan i se dialogen med Google's AI.
 
-## Hvad bruger jeg til at styre det hele ?
+## Hvad bruger jeg til at styre det hele med ?
 
 * Da vi allerede bruger Home Assistant og ESPHome til vores sikrings system, er det oplagt at brug den samme Home Assistant til dette, og lave nogle ESP32 med display og trykknapper til stationerne, og en anden ESP32 med med H-Bridge kontroller til at sende pulser til system urerne.
 
 ## [For nu klik denne link](https://github.com/sekt1953/Modeltog-Sikringsanlaeg/tree/main/Project/Clock)
+
