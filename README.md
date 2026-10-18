@@ -20,5 +20,4 @@ Da systemet ved hvor mange minuter der er til næste dag Kl: 03:55, sender den s
 * Styring af mekaniske og elektroniske Urer
   * [Home Assistant tid](./Project/README.md#home-assistant)
 * Styr tide i Lenz håndterminaler fra Home Assistant
-  * [XpressNet-biblioteker](./Project/README.md#xpressnet-biblioteker)
-  * [Lenz tid](./Project/README.md#lenz)
+  * [Lenz tid](./Project/README.md#lenz-håndterminaler)
