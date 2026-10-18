@@ -11,3 +11,9 @@
   * [Vilket loko er på en strækning](./Lenz_Time_Controll/03_loko_på_strækning.md)
   * [HomeAssistant tid til Lenz system](./Lenz_Time_Controll/04_HomeAssistant%20tim_til_Lenz.md)
 * Home Assistant
+  * [Clock](./HomeAssistant_Timecontroll/AI_Clock.md)
+  * [Clock_med Packages](./HomeAssistant_Timecontroll/AI_Clock_med%20Packages.md)
+  * [Clock_med_Master](./HomeAssistant_Timecontroll/AI_Clock_med_Master.md)
+  * [Clock med Master og Analog Ur](./HomeAssistant_Timecontroll/AI_Clock_med%20Master_Analog.md)
+  * [Split i flere ESPHome Package](./HomeAssistant_Timecontroll/split%20i%20flere%20ESPHome%20Package.md)
+  * [Lys i huse](./HomeAssistant_Timecontroll/Lys_i_huse.md)
