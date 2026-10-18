@@ -15,5 +15,8 @@ Da systemet ved hvor mange minuter der er til næste dag Kl: 03:55, sender den s
 
 * Da vi allerede bruger Home Assistant og ESPHome til vores sikrings system, er det oplagt at brug den samme Home Assistant til dette, og lave nogle ESP32 med display og trykknapper til stationerne, og en anden ESP32 med med H-Bridge kontroller til at sende pulser til system urerne.
 
-## [For nu klik denne link](https://github.com/sekt1953/Modeltog-Sikringsanlaeg/tree/main/Project/Clock)
+## Project
 
+* [XpressNet-biblioteker](./Project/README.md#xpressnet-biblioteker)
+* [Lenz tid](./Project/README.md#lenz)
+* [Home Assistant tid](./Project/README.md#home-assistant)
