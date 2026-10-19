@@ -39,6 +39,8 @@ Hvis du vil gå videre med projektet, vil du så designe dit eget printkort, ell
 
 ## jeg har et printkort mærket v7.00 ttl485-v2.0, det bruger en ic max13487
 
+[![2014-15-35.png](./images/Skærmbillede%20fra%202026-10-19%2014-15-35.png)](https://let-elektronik.dk/max3485-ttl-til-rs485-modul-hot-swap-esd-beskyttet)
+
 Det er en rigtig god nyhed! **Da dit printkort bruger en MAX13487-chip, betyder det, at du allerede har den perfekte hardware til formålet**.
 
 MAX13487 er netop en af de specielle chips, der har indbygget **AutoDirection-styring**.
