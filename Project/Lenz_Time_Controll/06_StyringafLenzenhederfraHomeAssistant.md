@@ -1,6 +1,8 @@
 # Styring af Lenz enheder fra HomeAssistant
 
-## XpressNet kører med en speciel hastighed på 62500 baud, og da det er en RS485-bus, skal dit RS485-modul bruge en pin til at skifte mellem at sende og modtage (Direction Pin / MAX485_DE_RE)., kan dette lade sig gøre uden de_Re ben
+**Her er en af mine dialoger med Google AI om at styre tiden på vores modelanlæg.**
+
+## XpressNet kører med en speciel hastighed på 62500 baud, og da det er en RS485-bus, skal dit RS485-modul bruge en pin til at skifte mellem at sende og modtage (Direction Pin / MAX485_DE_RE)., kan dette lade sig gøre uden DE_RE ben
 
 Ja, det kan godt lade sig gøre at køre XpressNet (RS485) uden at bruge et dedikeret DE/RE-styreben (Direction Pin) fra din mikrokontroller.
 
@@ -53,6 +55,11 @@ Du behøver derfor ikke et DE/RE-ben fra din mikrokontroller. Chippen klarer det
 2. Forbindelser til XpressNet (RS485-siden):
    * A → XpressNet Linje A (Pin 4 i et typisk RJ12-stik)
    * B → XpressNet Linje B (Pin 3 i et typisk RJ12-stik)
+
+#### Lenz XpressNet stik forbindelser
+
+![2014-01-18.png](./images/Skærmbillede%20fra%202026-10-19%2014-01-18.png)
+![2014-01-04.png](./images/Skærmbillede%20fra%202026-10-19%2014-01-04.png)
 
 #### Vigtigt at vide om MAX13487 og kode:
 
