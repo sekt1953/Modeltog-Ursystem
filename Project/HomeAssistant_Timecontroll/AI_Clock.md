@@ -190,6 +190,8 @@ text_sensor:
 
 ### Ledningsdiagram (ESP til L298N til Ur)
 
+[![2019-46-55.png](./Images/Skærmbillede%20fra%202026-10-15%2019-46-55.png)](https://ardustore.dk/produkt/l298n-dual-h-bridge-motor-controller-module?gad_source=1&gad_campaignid=24196175244&gbraid=0AAAAAo4di3IKMeAG5PcOemql0EaFZJnSo&gclid=CjwKCAjw_9bWBhBGEiwAomyTIiK7jE4LQTMbX8OCEmYxGfL05zIf2026n_7ab8BsKSi-kNd702JIuBoCJe4QAvD_BwE)
+
 1. ESP GPIO12 → IN1 på L298N
 2. ESP GPIO13 → IN2 på L298N
 3. ESP GND → GND på L298N (Vigtigt: Fælles stel!)

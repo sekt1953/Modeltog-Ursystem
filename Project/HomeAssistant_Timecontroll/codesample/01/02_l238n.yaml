@@ -1,0 +1,86 @@
+globals:
+  - id: simulated_timestamp
+    type: int
+    restore_value: no
+    initial_value: '1792012800' # Starttidspunkt
+  - id: last_simulated_minute
+    type: int
+    restore_value: no
+    initial_value: '-1'
+  - id: clock_polarity
+    type: bool
+    restore_value: no
+    initial_value: 'false'
+
+# Konfiguration af de 2 GPIO-pinde til din L298N H-bro
+switch:
+  - platform: gpio
+    pin: GPIO12  # Forbind til IN1 på L298N
+    id: h_bridge_in1
+    name: "H-Bridge IN1"
+  - platform: gpio
+    pin: GPIO13  # Forbind til IN2 på L298N
+    id: h_bridge_in2
+    name: "H-Bridge IN2"
+
+number:
+  - platform: template
+    name: "Time Speed Multiplier"
+    id: speed_multiplier
+    optimistic: true
+    min_value: 1.0
+    max_value: 20.0
+    step: 0.5
+    initial_value: 7.0 # Kører ca. 7 gange hurtigere som standard
+
+interval:
+  - interval: 1s
+    then:
+      - lambda: |-
+          // 1. Fremskynd den virtuelle tid
+          id(simulated_timestamp) += (int)id(speed_multiplier).state;
+
+          // 2. Find ud af hvilket virtuelt minut vi er i nu
+          time_t raw_time = id(simulated_timestamp);
+          struct tm *time_info = localtime(&raw_time);
+          int current_minute = time_info->tm_min;
+
+          // 3. Tjek om det virtuelle ur har skiftet minut
+          if (id(last_simulated_minute) == -1) {
+              id(last_simulated_minute) = current_minute;
+          } 
+          else if (current_minute != id(last_simulated_minute)) {
+              id(last_simulated_minute) = current_minute;
+              
+              // Skift polaritet (H-bro retning)
+              id(clock_polarity) = !id(clock_polarity);
+              
+              // Udløs impulsen via H-broen baseret på polariteten
+              if (id(clock_polarity)) {
+                id(h_bridge_in1).turn_on();
+                id(h_bridge_in2).turn_off();
+              } else {
+                id(h_bridge_in1).turn_off();
+                id(h_bridge_in2).turn_on();
+              }
+              
+              // Kør en timer der slukker for signalet igen efter en kort puls (f.eks. 400ms)
+              // så spolen i uret ikke brænder af eller bruger strøm konstant
+              arch_delay(400); 
+              
+              id(h_bridge_in1).turn_off();
+              id(h_bridge_in2).turn_off();
+          }
+
+# Valgfri tekstsensor så du kan se tiden i Home Assistant
+text_sensor:
+  - platform: template
+    name: "Accelerated Time"
+    id: accelerated_time
+    update_interval: 1s
+    lambda: |-
+      char formatted_time[9];
+      time_t raw_time = id(simulated_timestamp);
+      struct tm *time_info = localtime(&raw_time);
+      strftime(formatted_time, sizeof(formatted_time), "%H:%M:%S", time_info);
+      return std::string(formatted_time);
