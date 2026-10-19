@@ -22,4 +22,5 @@
     * [XpressNetMaster / XpressNetClient Informationer](./Lenz_Time_Controll/02_XpressNetMaster%20XpressNetClient_Informationer.md)
     * [Vilket loko er på en strækning](./Lenz_Time_Controll/03_loko_på_strækning.md)
     * [HomeAssistant tid til Lenz system](./Lenz_Time_Controll/04_HomeAssistant%20tim_til_Lenz.md)
+    * [Styringaf Lenz enheder fra Home Assistant](./Lenz_Time_Controll/06_StyringafLenzenhederfraHomeAssistant.md)
 
